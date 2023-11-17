@@ -24,7 +24,7 @@ public partial class FilmCatalogContext : DbContext
 
     public virtual DbSet<Studio> Studios { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)=> optionsBuilder.UseSqlite("Data Source=H:\\\\FilmCatalog.db");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)=> optionsBuilder.UseSqlite($"Data Source={Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)}\\FilmCatalog.db");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
